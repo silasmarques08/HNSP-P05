@@ -1,0 +1,36 @@
+CREATE DATABASE class_grades;
+
+USE class_grades;
+
+CREATE TABLE Matter (
+    codemat CHAR(4) PRIMARY KEY,
+    wording CHAR(20),
+    coef FLOAT
+);
+
+CREATE TABLE Student (
+    numstud INT PRIMARY KEY,
+    name CHAR(20),
+    firstname CHAR(20),
+    dateofbirth DATE,
+    street CHAR(255),
+    postalcod CHAR(5),
+    city CHAR(30)
+);
+
+CREATE TABLE Test (
+    numtest INT PRIMARY KEY,
+    testdate DATE,
+    place CHAR(30),
+    codemat CHAR(4),
+    FOREIGN KEY (codemat) REFERENCES Matter(codemat)
+);
+
+CREATE TABLE Notation (
+    numstud INT,
+    numtest INT,
+    score FLOAT,
+    PRIMARY KEY (numstud, numtest),
+    FOREIGN KEY (numstud) REFERENCES Student(numstud),
+    FOREIGN KEY (numtest) REFERENCES Test(numtest)
+);
