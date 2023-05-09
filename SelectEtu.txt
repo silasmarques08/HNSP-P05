@@ -1,6 +1,6 @@
 1) SELECT * FROM Student;
 
-2) SELECT * FROM Student;
+2) SELECT * FROM Student
    ORDER BY name DESC, firstname DESC;
 
 3) SELECT name,firstname FROM Student

@@ -1,7 +1,7 @@
 1) SELECT COUNT(*) FROM Notation;
 
 2) SELECT score, name, firstname FROM Notation
-JOIN Student ON Notation.numstud = Student.numstud
+JOIN Student ON Notation.numstud = Student.numstud;
 
 3) SELECT name, firstname, score, wording FROM Notation
 JOIN Student ON Notation.numstud = Student.numstud
